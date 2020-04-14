@@ -19,6 +19,7 @@ typedef struct {
 	int col;
 }Position;
 
+int devicestatus(void);
 void setfgcolor(int);
 void resetcolor(void);
 void clearscreen(void);
