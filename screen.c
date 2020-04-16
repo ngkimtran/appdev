@@ -7,7 +7,7 @@
 #include "screen.h"
 
 int devicestatus(void) {
-	printf("%c[5n", ESCC);
+	printf("%c[5n", ESC);
 	char status[40];
 	scanf("%s", status);
 	int ret;

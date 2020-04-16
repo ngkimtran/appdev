@@ -3,8 +3,10 @@
 #include <unistd.h>
 #include "screen.h"
 #include "comm.h"
+#include "sound.h"
 
 int main(void) {
+	//get posiion
 	Position cur = getscreensize();
 	char poststr[100];
 	sprintf(poststr, "row=%d&col=%d", cur.row, cur.col);
@@ -110,6 +112,18 @@ int main(void) {
 	resetcolor();
 	clearscreen();
 	printf("\nThis line is back to default color\n");
+
+
+	//read .WAV file
+	FILE *fp;
+	fp = fopen("1.wav", "r");
+	WAVheader h = readwavhdr(fp);
+	fclose(fp);
+
+	displaywavhdr(h);
+
+
+
 
 	return 0;
 }
