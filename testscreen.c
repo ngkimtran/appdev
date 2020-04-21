@@ -118,12 +118,11 @@ int main(void) {
 	FILE *fp;
 	fp = fopen("1.wav", "r");
 	WAVheader h = readwavhdr(fp);
-	fclose(fp);
-
 	displaywavhdr(h);
 
+	wavdata(h, fp);
 
-
+	fclose(fp);
 
 	return 0;
 }
