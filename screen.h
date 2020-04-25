@@ -2,6 +2,7 @@
 //1. Function declarations
 //2. Constant definitions
 
+	//constant definition
 #define ESC 0x1B
 enum FG {BLACK=30, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE};
 #define bg(c) (c+10) //this is called macro definition
@@ -18,7 +19,10 @@ typedef struct {
 	int row;
 	int col;
 }Position;
+//making  constant in a name will make your program more meaningful/readable
+//now we can use color names in function setfgcolor()
 
+	//function declaration
 int devicestatus(void);
 void setfgcolor(int);
 void resetcolor(void);
@@ -27,4 +31,4 @@ void gotoXY(int, int);
 void drawbar(int, int);
 void setbgcolor(int);
 void setcolors(int, int);
-Position getscreensize(void);
+Position getscreensize(void);		//this function returns a compound data (2 ints)

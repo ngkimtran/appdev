@@ -6,7 +6,7 @@
 #include "sound.h"
 
 int main(void) {
-	//get posiion
+		//get posiion
 	Position cur = getscreensize();
 	char poststr[100];
 	sprintf(poststr, "row=%d&col=%d", cur.row, cur.col);
@@ -15,7 +15,7 @@ int main(void) {
 	printf("Screen size, ROW = %d, COL = %d\n", cur.row, cur.col);
 	printf("HTTP POST is sent to %s\n", URL);
 	//printf("Press any key to clear the screen\n");
-	getchar();
+	getchar();			//waiting for the user the press any key
 	getchar();
 	int runtime = 500000;
 	
@@ -114,13 +114,13 @@ int main(void) {
 	printf("\nThis line is back to default color\n");
 
 
-	//read .WAV file
+		//read .WAV file
 	FILE *fp;
 	fp = fopen("1.wav", "r");
 	WAVheader h = readwavhdr(fp);
 	displaywavhdr(h);
 
-	wavdata(h, fp);
+	wavdata(h, fp);			//to calculate dB values and display them as a barchart
 
 	fclose(fp);
 

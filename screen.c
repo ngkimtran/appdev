@@ -33,7 +33,7 @@ void drawbar(int col, int row) {
 	int i;
 	for(i = 1; i <= row; i++) {
 		gotoXY(35-i, col);
-#ifdef UNICODE
+#ifdef UNICODE		//following codes are in conditional compilation
 		printf("%s", BAR);
 #else
 		printf("%c", '#');
@@ -49,10 +49,10 @@ void setcolors(int fg, int bg) {
 }
 Position getscreensize(void){
 	Position p;
-	char ret[100] = "\0";
+	char ret[100] = "\0";		//make an empty string for query return
 	int r, c;
-	gotoXY(999, 999);
-	printf("%c[6n", ESC);
+	gotoXY(999, 999);			//move cursor to the right-bottom corner
+	printf("%c[6n", ESC);		//send query sentence to the terminal
 	scanf("%s", ret);
 #ifdef DEBUG
 	printf("%s\n", ret);
@@ -60,7 +60,7 @@ Position getscreensize(void){
 #include <string.h>
 	//the following code will decode the return string from terminal
 	if(strlen(ret)>0) {
-		char dum;
+		char dum;				//dummy char to consume the chars in ret string
 		sscanf(ret, "%c%c%d%c%d%c", &dum, &dum, &r, &dum, &c, &dum);
 		p.row = r;
 		p.col = c;

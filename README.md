@@ -1,11 +1,9 @@
-# appdev project 2020
+# Application development project 2020
 
-# This project is for I-IT-1N students to understand what procedure and
-# what tools are needed in an application development.
+# This project is for I-IT-1N students to understand what procedure and what tools are needed in an application development.
 
 General description of the application:
-	This application will draw and animate objects on the screen as well as
-	send data to the server through a PHP file.
+	This application will display sounds as barchart as well as send data to the server through a PHP file.
 
 Table of contetns:
 1. Configuration instructions
@@ -20,20 +18,20 @@ Table of contetns:
 ----
 
 1. Configuration instructions:
-	In this section you need to tell the user how to configure the system(s)
-	to run this application.
+	You will need access to a shell server to run this program.
 
 2. Installation instructions:
-	In this section you need to tell the user how to install this application
-	from source code (usually is github repository) to an executable.
+	Run 
+		$git clone https://github.com/ngkimtran/appdev
+	to copy the project into your local repository.
 
 3. Operating instructions:
-	In this section you need to tell the user how to run the application.
-	E.g any command line arguments needed, any 3rd party library needed, etc.
+	Go to the directory you just cloned the project into (e.g $cd appdev) and run
+		$make
+		$./sound
+	to start the program.
 
 4. File manifest:
-	In this section you need to offer a list of files included in the application
-	In our case, so far ,the list may look like this:
 		README.md	 :	this file
 		screen.c	 :	contains screen manipulation functions
 		screen.h	 :	contains screen funtion declarations and related constants
@@ -42,6 +40,10 @@ Table of contetns:
 		comm.c		 :	contains all the functions for the client-server comunication
 		comm.h		 :	contains client-server communication functions declaration and related constants
 		testcurl.c	 :	contains testing function of client-server communication
+		main.c		 :	contains the final version of the program
+		sound.c		 :	contains functions to read the WAV file data and calculate them into dB values
+		sound.h		 :	contains sound data functions  declaration and related constants
+		sound.php	 :	contains the module to send data to the PHP program as a HTTP POST string
 
 5. Copyright and license information:
 	This application follows GPLv2 license.

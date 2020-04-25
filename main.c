@@ -7,13 +7,13 @@
 
 int main(void) {
 	FILE *fp;
-	fp = fopen("1.wav", "r");
+	fp = fopen("test.wav", "r");
 
 	WAVheader h = readwavhdr(fp);
 	displaywavhdr(h);
 
 	clearscreen();
-	wavdata(h, fp);
+	wavdata(h, fp);		//to calculate dB values and display them as a barchart
 
 	getchar();
 	fclose(fp);
